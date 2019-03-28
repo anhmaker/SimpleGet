@@ -18,7 +18,8 @@ namespace SimpleGet.Controllers
         // GET api/values/5
         public string Get(int id)
         {
-            return "value";
+            var simpleTocken = Request.Headers.GetValues("SimpleTocken");
+            return $"it was {simpleTocken.FirstOrDefault()}'";
         }
 
         // POST api/values
